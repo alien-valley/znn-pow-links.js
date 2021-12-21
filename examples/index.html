@@ -1,0 +1,10 @@
+<div id="x">The answer should be here</div>
+<script src="./znn-pow-links.js"></script>
+<script>
+    Module.onRuntimeInitialized = async _ => {
+        const api = {
+            benchmark: Module.cwrap('benchmark', 'string', ['string']),
+        };
+        document.getElementById("x").textContent = api.benchmark("21000")
+    }
+</script>
